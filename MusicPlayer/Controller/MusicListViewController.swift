@@ -56,8 +56,21 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
         super.viewDidAppear(animated)
        
         selectRow()
+        
+        //显示引导页
+        
+        if UserDefaults().isFirstLaunch() == true  {
+            return
+        }
+        
+        if let pageVC = storyboard?.instantiateViewController(withIdentifier: "GuideController") as? GuideViewController {
+            present(pageVC, animated: true, completion: nil)
+        }
+        
 
         animateTableView()
+        
+        
         
         
        
@@ -141,7 +154,7 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
             music = musics[indexPath.row]
         }
         cell.music = music
-        cell.numberLabel.text = String(indexPath.row + 1)
+        cell.numberLabel.text =  String(indexPath.row + 1)
         return cell
 
     }

@@ -12,7 +12,6 @@ class ContentViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
     @IBOutlet weak var skipButton: UIButton!
     var index = 0
     var imageName = ""
@@ -34,15 +33,5 @@ class ContentViewController: UIViewController {
         
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
