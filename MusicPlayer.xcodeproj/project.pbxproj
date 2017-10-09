@@ -7,21 +7,106 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3A1902C5C5A26D9E1E8214A /* Pods_MusicPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66320B295966865574F013B5 /* Pods_MusicPlayer.framework */; };
+		C7241D051F8B2E5F00E4F055 /* NotificationManager .swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CDB1F8B201200305AAC /* NotificationManager .swift */; };
+		C7241D061F8B2E5F00E4F055 /* MusicPlayManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CDC1F8B201B00305AAC /* MusicPlayManager.swift */; };
+		C7241D071F8B2E5F00E4F055 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CDE1F8B203A00305AAC /* APIManager.swift */; };
+		C7241D081F8B2E6E00E4F055 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE01F8B205C00305AAC /* Music.swift */; };
+		C7241D091F8B2E6E00E4F055 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE11F8B205C00305AAC /* Search.swift */; };
+		C7241D0A1F8B31EC00E4F055 /* IBDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CDF1F8B204700305AAC /* IBDesignable.swift */; };
+		C7241D0B1F8B31F500E4F055 /* RotateImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CF21F8B210500305AAC /* RotateImageView.swift */; };
+		C7241D0C1F8B31F500E4F055 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CDD1F8B202E00305AAC /* Extension.swift */; };
+		C7241D0D1F8B31F500E4F055 /* UserDefalutsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CD91F8B1FF000305AAC /* UserDefalutsHelper.swift */; };
+		C7241D0E1F8B323700E4F055 /* MusicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CD31F8B1F9600305AAC /* MusicCell.xib */; };
+		C7241D0F1F8B323700E4F055 /* MusicPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CD41F8B1F9600305AAC /* MusicPlayerViewController.xib */; };
+		C7241D101F8B348B00E4F055 /* Alan Walker - Fade.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CF51F8B214700305AAC /* Alan Walker - Fade.mp3 */; };
+		C7241D111F8B348B00E4F055 /* Ariana Grande,Iggy Azalea - Problem.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CF61F8B214700305AAC /* Ariana Grande,Iggy Azalea - Problem.mp3 */; };
+		C7241D121F8B348B00E4F055 /* Bill Conti - Gonna Fly Now.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CF71F8B214700305AAC /* Bill Conti - Gonna Fly Now.mp3 */; };
+		C7241D131F8B348B00E4F055 /* Bruno Mars - Grenade.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CF81F8B214700305AAC /* Bruno Mars - Grenade.mp3 */; };
+		C7241D141F8B348B00E4F055 /* Bruno Mars - Runaway Baby.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CF91F8B214700305AAC /* Bruno Mars - Runaway Baby.mp3 */; };
+		C7241D151F8B348B00E4F055 /* Calvin Harris - Let's Go - Radio Edit.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CFA1F8B214700305AAC /* Calvin Harris - Let's Go - Radio Edit.mp3 */; };
+		C7241D161F8B348B00E4F055 /* Christina Aguilera - Fighter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CFB1F8B214700305AAC /* Christina Aguilera - Fighter.mp3 */; };
+		C7241D171F8B348B00E4F055 /* Eminem - Lose Yourself.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CFC1F8B214700305AAC /* Eminem - Lose Yourself.mp3 */; };
+		C7241D181F8B348B00E4F055 /* Fall Out Boy - Uma Thurman.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CFD1F8B214700305AAC /* Fall Out Boy - Uma Thurman.mp3 */; };
+		C7241D191F8B348B00E4F055 /* Florence + The Machine - Dog Days Are Over.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CFE1F8B214700305AAC /* Florence + The Machine - Dog Days Are Over.mp3 */; };
+		C7241D1A1F8B348B00E4F055 /* Lady Gaga - Just Dance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CFF1F8B214700305AAC /* Lady Gaga - Just Dance.mp3 */; };
+		C7241D1B1F8B348B00E4F055 /* Nicoleta Matei - Love mail.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D001F8B214700305AAC /* Nicoleta Matei - Love mail.mp3 */; };
+		C7241D1C1F8B348B00E4F055 /* Shakira - Hips Don't Lie.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D011F8B214700305AAC /* Shakira - Hips Don't Lie.mp3 */; };
+		C7241D1D1F8B348B00E4F055 /* T.I. - Whatever You Like.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D021F8B214700305AAC /* T.I. - Whatever You Like.mp3 */; };
+		C7241D1E1F8B348B00E4F055 /* The Downtown Fiction - I Just Wanna Run.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D031F8B214700305AAC /* The Downtown Fiction - I Just Wanna Run.mp3 */; };
+		C7241D1F1F8B348B00E4F055 /* 우나 - So In Love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D041F8B214700305AAC /* 우나 - So In Love.mp3 */; };
+		C7241D201F8B348B00E4F055 /* 周深 - 姐姐.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D051F8B214700305AAC /* 周深 - 姐姐.mp3 */; };
+		C7241D211F8B348B00E4F055 /* 张杰 - 夜空中最亮的星.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D061F8B214700305AAC /* 张杰 - 夜空中最亮的星.mp3 */; };
+		C7241D221F8B348B00E4F055 /* 王菲 - 愿.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D071F8B214700305AAC /* 王菲 - 愿.mp3 */; };
+		C7241D231F8B348B00E4F055 /* 罗百吉 - Put Your Hands In Air (电音舞曲版) - remix.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C72F9D081F8B214700305AAC /* 罗百吉 - Put Your Hands In Air (电音舞曲版) - remix.mp3 */; };
 		C72F9CB31F8B1D6A00305AAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CB21F8B1D6A00305AAC /* AppDelegate.swift */; };
-		C72F9CB51F8B1D6A00305AAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CB41F8B1D6A00305AAC /* ViewController.swift */; };
-		C72F9CB81F8B1D6A00305AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CB61F8B1D6A00305AAC /* Main.storyboard */; };
-		C72F9CBA1F8B1D6A00305AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CB91F8B1D6A00305AAC /* Assets.xcassets */; };
 		C72F9CBD1F8B1D6A00305AAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CBB1F8B1D6A00305AAC /* LaunchScreen.storyboard */; };
+		C72F9CC71F8B1E7700305AAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CC41F8B1DD800305AAC /* Main.storyboard */; };
+		C72F9CC81F8B1E7700305AAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CC61F8B1E3700305AAC /* Assets.xcassets */; };
+		C72F9CD11F8B1F7700305AAC /* MusicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CD01F8B1F6600305AAC /* MusicCell.swift */; };
+		C72F9CD51F8B1F9600305AAC /* SearchFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CD21F8B1F9600305AAC /* SearchFooter.swift */; };
+		C72F9CD81F8B1FD200305AAC /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C72F9CD71F8B1FCC00305AAC /* Pacifico-Regular.ttf */; };
+		C72F9CEA1F8B20B200305AAC /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE51F8B20A000305AAC /* ContentViewController.swift */; };
+		C72F9CEB1F8B20B200305AAC /* CustomSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE91F8B20A100305AAC /* CustomSearchController.swift */; };
+		C72F9CEC1F8B20B200305AAC /* GuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE61F8B20A000305AAC /* GuideViewController.swift */; };
+		C72F9CED1F8B20B200305AAC /* MusicListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE21F8B20A000305AAC /* MusicListViewController.swift */; };
+		C72F9CEE1F8B20B200305AAC /* MusicListViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE41F8B20A000305AAC /* MusicListViewControllerExtension.swift */; };
+		C72F9CEF1F8B20B200305AAC /* MusicPlayerControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE71F8B20A100305AAC /* MusicPlayerControllerExtension.swift */; };
+		C72F9CF01F8B20B200305AAC /* MusicPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C72F9CE81F8B20A100305AAC /* MusicPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		023AFB900355F08396A102E0 /* Pods-MusicPlayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicPlayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicPlayer/Pods-MusicPlayer.debug.xcconfig"; sourceTree = "<group>"; };
+		66320B295966865574F013B5 /* Pods_MusicPlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicPlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72F9CAF1F8B1D6A00305AAC /* MusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72F9CB21F8B1D6A00305AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C72F9CB41F8B1D6A00305AAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C72F9CB71F8B1D6A00305AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C72F9CB91F8B1D6A00305AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C72F9CBC1F8B1D6A00305AAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C72F9CBE1F8B1D6A00305AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C72F9CC41F8B1DD800305AAC /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C72F9CC61F8B1E3700305AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../MusicPlayer-master/Assets.xcassets"; sourceTree = "<group>"; };
+		C72F9CD01F8B1F6600305AAC /* MusicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MusicCell.swift; path = "../../../MusicPlayer-master/View/MusicCell.swift"; sourceTree = "<group>"; };
+		C72F9CD21F8B1F9600305AAC /* SearchFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFooter.swift; sourceTree = "<group>"; };
+		C72F9CD31F8B1F9600305AAC /* MusicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicCell.xib; sourceTree = "<group>"; };
+		C72F9CD41F8B1F9600305AAC /* MusicPlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MusicPlayerViewController.xib; sourceTree = "<group>"; };
+		C72F9CD71F8B1FCC00305AAC /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		C72F9CD91F8B1FF000305AAC /* UserDefalutsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefalutsHelper.swift; sourceTree = "<group>"; };
+		C72F9CDB1F8B201200305AAC /* NotificationManager .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationManager .swift"; sourceTree = "<group>"; };
+		C72F9CDC1F8B201B00305AAC /* MusicPlayManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayManager.swift; sourceTree = "<group>"; };
+		C72F9CDD1F8B202E00305AAC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		C72F9CDE1F8B203A00305AAC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		C72F9CDF1F8B204700305AAC /* IBDesignable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignable.swift; sourceTree = "<group>"; };
+		C72F9CE01F8B205C00305AAC /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		C72F9CE11F8B205C00305AAC /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		C72F9CE21F8B20A000305AAC /* MusicListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewController.swift; sourceTree = "<group>"; };
+		C72F9CE41F8B20A000305AAC /* MusicListViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicListViewControllerExtension.swift; sourceTree = "<group>"; };
+		C72F9CE51F8B20A000305AAC /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		C72F9CE61F8B20A000305AAC /* GuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideViewController.swift; sourceTree = "<group>"; };
+		C72F9CE71F8B20A100305AAC /* MusicPlayerControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerControllerExtension.swift; sourceTree = "<group>"; };
+		C72F9CE81F8B20A100305AAC /* MusicPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicPlayerViewController.swift; sourceTree = "<group>"; };
+		C72F9CE91F8B20A100305AAC /* CustomSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSearchController.swift; sourceTree = "<group>"; };
+		C72F9CF21F8B210500305AAC /* RotateImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateImageView.swift; sourceTree = "<group>"; };
+		C72F9CF31F8B211000305AAC /* My-Bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My-Bridging-header.h"; sourceTree = "<group>"; };
+		C72F9CF51F8B214700305AAC /* Alan Walker - Fade.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Alan Walker - Fade.mp3"; sourceTree = "<group>"; };
+		C72F9CF61F8B214700305AAC /* Ariana Grande,Iggy Azalea - Problem.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ariana Grande,Iggy Azalea - Problem.mp3"; sourceTree = "<group>"; };
+		C72F9CF71F8B214700305AAC /* Bill Conti - Gonna Fly Now.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bill Conti - Gonna Fly Now.mp3"; sourceTree = "<group>"; };
+		C72F9CF81F8B214700305AAC /* Bruno Mars - Grenade.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bruno Mars - Grenade.mp3"; sourceTree = "<group>"; };
+		C72F9CF91F8B214700305AAC /* Bruno Mars - Runaway Baby.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Bruno Mars - Runaway Baby.mp3"; sourceTree = "<group>"; };
+		C72F9CFA1F8B214700305AAC /* Calvin Harris - Let's Go - Radio Edit.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Calvin Harris - Let's Go - Radio Edit.mp3"; sourceTree = "<group>"; };
+		C72F9CFB1F8B214700305AAC /* Christina Aguilera - Fighter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Christina Aguilera - Fighter.mp3"; sourceTree = "<group>"; };
+		C72F9CFC1F8B214700305AAC /* Eminem - Lose Yourself.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Eminem - Lose Yourself.mp3"; sourceTree = "<group>"; };
+		C72F9CFD1F8B214700305AAC /* Fall Out Boy - Uma Thurman.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Fall Out Boy - Uma Thurman.mp3"; sourceTree = "<group>"; };
+		C72F9CFE1F8B214700305AAC /* Florence + The Machine - Dog Days Are Over.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Florence + The Machine - Dog Days Are Over.mp3"; sourceTree = "<group>"; };
+		C72F9CFF1F8B214700305AAC /* Lady Gaga - Just Dance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lady Gaga - Just Dance.mp3"; sourceTree = "<group>"; };
+		C72F9D001F8B214700305AAC /* Nicoleta Matei - Love mail.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Nicoleta Matei - Love mail.mp3"; sourceTree = "<group>"; };
+		C72F9D011F8B214700305AAC /* Shakira - Hips Don't Lie.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Shakira - Hips Don't Lie.mp3"; sourceTree = "<group>"; };
+		C72F9D021F8B214700305AAC /* T.I. - Whatever You Like.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "T.I. - Whatever You Like.mp3"; sourceTree = "<group>"; };
+		C72F9D031F8B214700305AAC /* The Downtown Fiction - I Just Wanna Run.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Downtown Fiction - I Just Wanna Run.mp3"; sourceTree = "<group>"; };
+		C72F9D041F8B214700305AAC /* 우나 - So In Love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "우나 - So In Love.mp3"; sourceTree = "<group>"; };
+		C72F9D051F8B214700305AAC /* 周深 - 姐姐.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "周深 - 姐姐.mp3"; sourceTree = "<group>"; };
+		C72F9D061F8B214700305AAC /* 张杰 - 夜空中最亮的星.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "张杰 - 夜空中最亮的星.mp3"; sourceTree = "<group>"; };
+		C72F9D071F8B214700305AAC /* 王菲 - 愿.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "王菲 - 愿.mp3"; sourceTree = "<group>"; };
+		C72F9D081F8B214700305AAC /* 罗百吉 - Put Your Hands In Air (电音舞曲版) - remix.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "罗百吉 - Put Your Hands In Air (电音舞曲版) - remix.mp3"; sourceTree = "<group>"; };
+		D755F50FBB1FF4FE341C4088 /* Pods-MusicPlayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicPlayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicPlayer/Pods-MusicPlayer.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +114,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3A1902C5C5A26D9E1E8214A /* Pods_MusicPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0841BA4A1CAEB1B48504BF06 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				023AFB900355F08396A102E0 /* Pods-MusicPlayer.debug.xcconfig */,
+				D755F50FBB1FF4FE341C4088 /* Pods-MusicPlayer.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A6C5274884BC11BD50D0D38C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				66320B295966865574F013B5 /* Pods_MusicPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C72F9CA61F8B1D6A00305AAC = {
 			isa = PBXGroup;
 			children = (
 				C72F9CB11F8B1D6A00305AAC /* MusicPlayer */,
 				C72F9CB01F8B1D6A00305AAC /* Products */,
+				0841BA4A1CAEB1B48504BF06 /* Pods */,
+				A6C5274884BC11BD50D0D38C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +159,111 @@
 		C72F9CB11F8B1D6A00305AAC /* MusicPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				C72F9CF41F8B214700305AAC /* Music */,
+				C72F9CDA1F8B200400305AAC /* Manager */,
+				C72F9CCE1F8B1F3600305AAC /* Resources */,
+				C72F9CCD1F8B1F1C00305AAC /* Controller */,
+				C72F9CCC1F8B1F1600305AAC /* View */,
+				C72F9CCB1F8B1F1100305AAC /* Model */,
+				C72F9CC91F8B1F0400305AAC /* Helper */,
 				C72F9CB21F8B1D6A00305AAC /* AppDelegate.swift */,
-				C72F9CB41F8B1D6A00305AAC /* ViewController.swift */,
-				C72F9CB61F8B1D6A00305AAC /* Main.storyboard */,
-				C72F9CB91F8B1D6A00305AAC /* Assets.xcassets */,
+				C72F9CC41F8B1DD800305AAC /* Main.storyboard */,
+				C72F9CC61F8B1E3700305AAC /* Assets.xcassets */,
 				C72F9CBB1F8B1D6A00305AAC /* LaunchScreen.storyboard */,
 				C72F9CBE1F8B1D6A00305AAC /* Info.plist */,
 			);
 			path = MusicPlayer;
+			sourceTree = "<group>";
+		};
+		C72F9CC91F8B1F0400305AAC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C72F9CF21F8B210500305AAC /* RotateImageView.swift */,
+				C72F9CDF1F8B204700305AAC /* IBDesignable.swift */,
+				C72F9CDD1F8B202E00305AAC /* Extension.swift */,
+				C72F9CD91F8B1FF000305AAC /* UserDefalutsHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		C72F9CCB1F8B1F1100305AAC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C72F9CE01F8B205C00305AAC /* Music.swift */,
+				C72F9CE11F8B205C00305AAC /* Search.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C72F9CCC1F8B1F1600305AAC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C72F9CD01F8B1F6600305AAC /* MusicCell.swift */,
+				C72F9CD31F8B1F9600305AAC /* MusicCell.xib */,
+				C72F9CD41F8B1F9600305AAC /* MusicPlayerViewController.xib */,
+				C72F9CD21F8B1F9600305AAC /* SearchFooter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C72F9CCD1F8B1F1C00305AAC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C72F9CE51F8B20A000305AAC /* ContentViewController.swift */,
+				C72F9CE91F8B20A100305AAC /* CustomSearchController.swift */,
+				C72F9CE61F8B20A000305AAC /* GuideViewController.swift */,
+				C72F9CE21F8B20A000305AAC /* MusicListViewController.swift */,
+				C72F9CE41F8B20A000305AAC /* MusicListViewControllerExtension.swift */,
+				C72F9CE81F8B20A100305AAC /* MusicPlayerViewController.swift */,
+				C72F9CE71F8B20A100305AAC /* MusicPlayerControllerExtension.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C72F9CCE1F8B1F3600305AAC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C72F9CF31F8B211000305AAC /* My-Bridging-header.h */,
+				C72F9CD71F8B1FCC00305AAC /* Pacifico-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C72F9CDA1F8B200400305AAC /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C72F9CDB1F8B201200305AAC /* NotificationManager .swift */,
+				C72F9CDC1F8B201B00305AAC /* MusicPlayManager.swift */,
+				C72F9CDE1F8B203A00305AAC /* APIManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		C72F9CF41F8B214700305AAC /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				C72F9CF51F8B214700305AAC /* Alan Walker - Fade.mp3 */,
+				C72F9CF61F8B214700305AAC /* Ariana Grande,Iggy Azalea - Problem.mp3 */,
+				C72F9CF71F8B214700305AAC /* Bill Conti - Gonna Fly Now.mp3 */,
+				C72F9CF81F8B214700305AAC /* Bruno Mars - Grenade.mp3 */,
+				C72F9CF91F8B214700305AAC /* Bruno Mars - Runaway Baby.mp3 */,
+				C72F9CFA1F8B214700305AAC /* Calvin Harris - Let's Go - Radio Edit.mp3 */,
+				C72F9CFB1F8B214700305AAC /* Christina Aguilera - Fighter.mp3 */,
+				C72F9CFC1F8B214700305AAC /* Eminem - Lose Yourself.mp3 */,
+				C72F9CFD1F8B214700305AAC /* Fall Out Boy - Uma Thurman.mp3 */,
+				C72F9CFE1F8B214700305AAC /* Florence + The Machine - Dog Days Are Over.mp3 */,
+				C72F9CFF1F8B214700305AAC /* Lady Gaga - Just Dance.mp3 */,
+				C72F9D001F8B214700305AAC /* Nicoleta Matei - Love mail.mp3 */,
+				C72F9D011F8B214700305AAC /* Shakira - Hips Don't Lie.mp3 */,
+				C72F9D021F8B214700305AAC /* T.I. - Whatever You Like.mp3 */,
+				C72F9D031F8B214700305AAC /* The Downtown Fiction - I Just Wanna Run.mp3 */,
+				C72F9D041F8B214700305AAC /* 우나 - So In Love.mp3 */,
+				C72F9D051F8B214700305AAC /* 周深 - 姐姐.mp3 */,
+				C72F9D061F8B214700305AAC /* 张杰 - 夜空中最亮的星.mp3 */,
+				C72F9D071F8B214700305AAC /* 王菲 - 愿.mp3 */,
+				C72F9D081F8B214700305AAC /* 罗百吉 - Put Your Hands In Air (电音舞曲版) - remix.mp3 */,
+			);
+			path = Music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +273,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C72F9CC11F8B1D6A00305AAC /* Build configuration list for PBXNativeTarget "MusicPlayer" */;
 			buildPhases = (
+				7FC62425A97AA59AB68A6BEA /* [CP] Check Pods Manifest.lock */,
 				C72F9CAB1F8B1D6A00305AAC /* Sources */,
 				C72F9CAC1F8B1D6A00305AAC /* Frameworks */,
 				C72F9CAD1F8B1D6A00305AAC /* Resources */,
+				C35C7069883FF4043580D53E /* [CP] Embed Pods Frameworks */,
+				04D8D7A7EC9C86C514567D39 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,20 +328,122 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7241D101F8B348B00E4F055 /* Alan Walker - Fade.mp3 in Resources */,
+				C7241D111F8B348B00E4F055 /* Ariana Grande,Iggy Azalea - Problem.mp3 in Resources */,
+				C7241D121F8B348B00E4F055 /* Bill Conti - Gonna Fly Now.mp3 in Resources */,
+				C7241D131F8B348B00E4F055 /* Bruno Mars - Grenade.mp3 in Resources */,
+				C7241D141F8B348B00E4F055 /* Bruno Mars - Runaway Baby.mp3 in Resources */,
+				C7241D151F8B348B00E4F055 /* Calvin Harris - Let's Go - Radio Edit.mp3 in Resources */,
+				C7241D161F8B348B00E4F055 /* Christina Aguilera - Fighter.mp3 in Resources */,
+				C7241D171F8B348B00E4F055 /* Eminem - Lose Yourself.mp3 in Resources */,
+				C7241D181F8B348B00E4F055 /* Fall Out Boy - Uma Thurman.mp3 in Resources */,
+				C7241D191F8B348B00E4F055 /* Florence + The Machine - Dog Days Are Over.mp3 in Resources */,
+				C7241D1A1F8B348B00E4F055 /* Lady Gaga - Just Dance.mp3 in Resources */,
+				C7241D1B1F8B348B00E4F055 /* Nicoleta Matei - Love mail.mp3 in Resources */,
+				C7241D1C1F8B348B00E4F055 /* Shakira - Hips Don't Lie.mp3 in Resources */,
+				C7241D1D1F8B348B00E4F055 /* T.I. - Whatever You Like.mp3 in Resources */,
+				C7241D1E1F8B348B00E4F055 /* The Downtown Fiction - I Just Wanna Run.mp3 in Resources */,
+				C7241D1F1F8B348B00E4F055 /* 우나 - So In Love.mp3 in Resources */,
+				C7241D201F8B348B00E4F055 /* 周深 - 姐姐.mp3 in Resources */,
+				C7241D211F8B348B00E4F055 /* 张杰 - 夜空中最亮的星.mp3 in Resources */,
+				C7241D221F8B348B00E4F055 /* 王菲 - 愿.mp3 in Resources */,
+				C7241D231F8B348B00E4F055 /* 罗百吉 - Put Your Hands In Air (电音舞曲版) - remix.mp3 in Resources */,
+				C7241D0E1F8B323700E4F055 /* MusicCell.xib in Resources */,
+				C7241D0F1F8B323700E4F055 /* MusicPlayerViewController.xib in Resources */,
+				C72F9CD81F8B1FD200305AAC /* Pacifico-Regular.ttf in Resources */,
+				C72F9CC71F8B1E7700305AAC /* Main.storyboard in Resources */,
+				C72F9CC81F8B1E7700305AAC /* Assets.xcassets in Resources */,
 				C72F9CBD1F8B1D6A00305AAC /* LaunchScreen.storyboard in Resources */,
-				C72F9CBA1F8B1D6A00305AAC /* Assets.xcassets in Resources */,
-				C72F9CB81F8B1D6A00305AAC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04D8D7A7EC9C86C514567D39 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicPlayer/Pods-MusicPlayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FC62425A97AA59AB68A6BEA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicPlayer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C35C7069883FF4043580D53E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MusicPlayer/Pods-MusicPlayer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-Decodable/Alamofire_Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/Decodable/Decodable.framework",
+				"${BUILT_PRODUCTS_DIR}/PYSearch/PYSearch.framework",
+				"${BUILT_PRODUCTS_DIR}/Toast/Toast.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Decodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Decodable.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PYSearch.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicPlayer/Pods-MusicPlayer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C72F9CAB1F8B1D6A00305AAC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C72F9CB51F8B1D6A00305AAC /* ViewController.swift in Sources */,
+				C7241D0B1F8B31F500E4F055 /* RotateImageView.swift in Sources */,
+				C7241D0C1F8B31F500E4F055 /* Extension.swift in Sources */,
+				C7241D0D1F8B31F500E4F055 /* UserDefalutsHelper.swift in Sources */,
+				C7241D0A1F8B31EC00E4F055 /* IBDesignable.swift in Sources */,
+				C7241D081F8B2E6E00E4F055 /* Music.swift in Sources */,
+				C7241D091F8B2E6E00E4F055 /* Search.swift in Sources */,
+				C7241D051F8B2E5F00E4F055 /* NotificationManager .swift in Sources */,
+				C7241D061F8B2E5F00E4F055 /* MusicPlayManager.swift in Sources */,
+				C7241D071F8B2E5F00E4F055 /* APIManager.swift in Sources */,
+				C72F9CEA1F8B20B200305AAC /* ContentViewController.swift in Sources */,
+				C72F9CEB1F8B20B200305AAC /* CustomSearchController.swift in Sources */,
+				C72F9CEC1F8B20B200305AAC /* GuideViewController.swift in Sources */,
+				C72F9CED1F8B20B200305AAC /* MusicListViewController.swift in Sources */,
+				C72F9CEE1F8B20B200305AAC /* MusicListViewControllerExtension.swift in Sources */,
+				C72F9CEF1F8B20B200305AAC /* MusicPlayerControllerExtension.swift in Sources */,
+				C72F9CF01F8B20B200305AAC /* MusicPlayerViewController.swift in Sources */,
+				C72F9CD11F8B1F7700305AAC /* MusicCell.swift in Sources */,
+				C72F9CD51F8B1F9600305AAC /* SearchFooter.swift in Sources */,
 				C72F9CB31F8B1D6A00305AAC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,14 +451,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C72F9CB61F8B1D6A00305AAC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C72F9CB71F8B1D6A00305AAC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C72F9CBB1F8B1D6A00305AAC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -272,30 +571,34 @@
 		};
 		C72F9CC21F8B1D6A00305AAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 023AFB900355F08396A102E0 /* Pods-MusicPlayer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M6ZDLRSM4A;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.omni.MusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		C72F9CC31F8B1D6A00305AAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D755F50FBB1FF4FE341C4088 /* Pods-MusicPlayer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M6ZDLRSM4A;
 				INFOPLIST_FILE = MusicPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.omni.MusicPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

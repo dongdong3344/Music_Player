@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.5.1)
+  - Alamofire-Decodable (2.0.1):
+    - Alamofire (~> 4.0)
+    - Decodable (~> 0.5.0)
+  - Decodable (0.5)
+  - PYSearch (0.8.4)
+  - Toast (3.1.0)
+
+DEPENDENCIES:
+  - Alamofire-Decodable (~> 2.0.1)
+  - PYSearch (~> 0.8.4)
+  - Toast (~> 3.1.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Alamofire-Decodable: 4f25e38286877926e5953d0f73350e5d85ab1ede
+  Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
+  PYSearch: 75f94d4a1473334898a5776bf62a6a08ebe7eec5
+  Toast: 14a93686d6c8bfe2727afd342414e35660a8a1f3
+
+PODFILE CHECKSUM: fde27e3da3a2c823a9ae56960778a12276147e5e
+
+COCOAPODS: 1.4.0.beta.1
