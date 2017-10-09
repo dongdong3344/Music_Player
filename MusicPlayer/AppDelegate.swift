@@ -18,9 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         
-        //  UINavigationBar.appearance().tintColor = .white
-        
-        UINavigationBar.appearance().setBackgroundImage(UIImage(),for: .default)
+        UINavigationBar.appearance().barTintColor = UIColor(r: 227, g: 0, b: 24)
+        UINavigationBar.appearance().tintColor =  .white
+       // UINavigationBar.appearance().setBackgroundImage(UIImage(),for: .default)
         
         UINavigationBar.appearance().shadowImage = UIImage()
         
@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if #available(iOS 11.0, *) {
             //设置文字
-            UISearchBar.appearance().tintColor = UIColor.white
+            UISearchBar.appearance().tintColor = UIColor.black
         } else {
             // Fallback on earlier versions
         }
@@ -63,7 +63,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 11.0, *) {
             
             // Search bar placeholder text color
-            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "搜索歌单内的歌曲", attributes: [NSForegroundColorAttributeName: UIColor.white])
+            UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).attributedPlaceholder = NSAttributedString(string: "搜索歌单内的歌曲", attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
             
             // Search bar text color
             UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).defaultTextAttributes = [NSForegroundColorAttributeName: UIColor.white]

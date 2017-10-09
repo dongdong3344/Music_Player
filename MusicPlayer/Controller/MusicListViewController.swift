@@ -111,7 +111,7 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         tableView.register(UINib.init(nibName: "MusicCell", bundle: nil), forCellReuseIdentifier: identifier)
         
-        tableView.backgroundColor = UIColor.clear
+      //  tableView.backgroundColor = UIColor.clear
         
         tableView.separatorStyle = .none
         

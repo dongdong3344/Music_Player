@@ -182,7 +182,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         labelStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
         
-       NotificationManager.sharedInstance.addUpdatePlayerObserver(self, action: #selector(self.updateViews))
+        NotificationManager.sharedInstance.addUpdatePlayerObserver(self, action: #selector(self.updateViews))
         
         
     }
@@ -191,7 +191,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         super.viewDidAppear(animated)
         
-    
+        
         UIView.animate(withDuration: 0.5) {
             
              self.labelStackView.transform = .identity

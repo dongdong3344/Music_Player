@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Cp-20-cdo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="3Cp-20-cdo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -119,9 +119,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="Fbp-bg-oxl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iHK-YP-DEp">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -141,14 +138,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="osu-qy-UoZ" firstAttribute="leading" secondItem="dUF-6G-bOU" secondAttribute="leading" id="AxB-5U-pz8"/>
-                            <constraint firstItem="Fbp-bg-oxl" firstAttribute="leading" secondItem="dUF-6G-bOU" secondAttribute="leading" id="LJD-dw-zas"/>
-                            <constraint firstItem="Fbp-bg-oxl" firstAttribute="top" secondItem="dUF-6G-bOU" secondAttribute="top" id="NX6-3l-N5h"/>
                             <constraint firstAttribute="trailing" secondItem="osu-qy-UoZ" secondAttribute="trailing" id="OZH-Sb-34v"/>
-                            <constraint firstAttribute="trailing" secondItem="Fbp-bg-oxl" secondAttribute="trailing" id="R9S-ug-LPF"/>
                             <constraint firstItem="iHK-YP-DEp" firstAttribute="leading" secondItem="dUF-6G-bOU" secondAttribute="leading" id="adU-xd-e92"/>
                             <constraint firstItem="e2S-zl-gi5" firstAttribute="top" secondItem="iHK-YP-DEp" secondAttribute="bottom" id="ead-Mw-NE1"/>
                             <constraint firstItem="e2S-zl-gi5" firstAttribute="top" secondItem="osu-qy-UoZ" secondAttribute="bottom" id="hbC-q8-DjB"/>
-                            <constraint firstItem="e2S-zl-gi5" firstAttribute="top" secondItem="Fbp-bg-oxl" secondAttribute="bottom" id="kGE-0d-F1K"/>
                             <constraint firstAttribute="trailing" secondItem="iHK-YP-DEp" secondAttribute="trailing" id="tdb-qc-sz0"/>
                             <constraint firstItem="iHK-YP-DEp" firstAttribute="top" secondItem="dUF-6G-bOU" secondAttribute="top" constant="64" id="yML-hE-xBz"/>
                         </constraints>
@@ -172,7 +165,4 @@
             <point key="canvasLocation" x="356" y="135.38230884557723"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="BackgroundImage" width="187" height="333"/>
-    </resources>
 </document>
