@@ -154,7 +154,8 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
             music = musics[indexPath.row]
         }
         cell.music = music
-        cell.numberLabel.text =  String(indexPath.row + 1)
+        cell.numberLabel.text = NSString(format: "%02d", indexPath.row + 1) as String
+           // String(indexPath.row + 1)
         return cell
 
     }

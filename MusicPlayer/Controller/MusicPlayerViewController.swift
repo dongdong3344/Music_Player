@@ -25,6 +25,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var artworkImageView: UIImageView!
     
+    @IBOutlet weak var needleImgView: UIImageView!
     var timer : Timer!
     var hideVolumeSliderTimer : Timer!
     var displayLink:CADisplayLink!
@@ -178,7 +179,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         setupDisplayLink()
         
-        artworkImageView.setAsCircle(borderWidth: 5, borderColor: .black)
+       artworkImageView.setAsCircle(borderWidth: 1, borderColor: .black)
         
         labelStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
         
@@ -225,7 +226,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     // MARK: - Notifications
     func audioSessionRouteChange(_ notification:Notification){
         
-        let routeChangeDict = notification.userInfo as! NSDictionary
+        let routeChangeDict = notification.userInfo! as NSDictionary
         
         let routeChangeReason  = routeChangeDict.value(forKey: AVAudioSessionRouteChangeReasonKey) as! UInt
         switch routeChangeReason {
@@ -235,6 +236,8 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         case AVAudioSessionRouteChangeReason.oldDeviceUnavailable.rawValue:
             print("拔出耳机")
             MusicPlayManager.shared.pause()
+            playOrPauseButton.isSelected = false
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_play_prs"), for: .normal)
             break
         default:
             break
@@ -244,16 +247,16 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
     func audioSessionInterrupt(_ notification:Notification){
         let interruptionDict = notification.userInfo! as NSDictionary
-        let interruptionType   = interruptionDict.value(forKey: AVAudioSessionInterruptionTypeKey) as! Int
-        let interruptionOption  = interruptionDict.value(forKey: AVAudioSessionInterruptionOptionKey) as! Int
+        let interruptionType   = interruptionDict.value(forKey: AVAudioSessionInterruptionTypeKey) as? UInt
+        let interruptionOption  = interruptionDict.value(forKey: AVAudioSessionInterruptionOptionKey) as? UInt
          // 收到播放中断的通知暂停播放,
-        if interruptionType == Int(AVAudioSessionInterruptionType.began.rawValue) {
+        if interruptionType == AVAudioSessionInterruptionType.began.rawValue {
             MusicPlayManager.shared.pause()
        
         }
         
         // 中断结束，判断是否需要恢复播放
-        if interruptionOption == Int(AVAudioSessionInterruptionOptions.shouldResume.rawValue){
+        if interruptionOption == AVAudioSessionInterruptionOptions.shouldResume.rawValue{
             
             MusicPlayManager.shared.play()
            
@@ -265,7 +268,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     // MARK: - Update Views
     func updateViews(){
         
-        setupPlayerUI
+        setupPlayerUI()
         
         startTimer()
         
