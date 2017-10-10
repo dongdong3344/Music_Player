@@ -220,7 +220,7 @@ extension MusicPlayManager {
             
         }
         
-        NotificationManager.sharedInstance.postUpdatePlayerNotification()
+        NotificationManager.shared.postUpdatePlayerNotification()
         
         lastIndex = currentIndex
         

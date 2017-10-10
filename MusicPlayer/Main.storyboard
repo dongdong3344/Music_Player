@@ -12,7 +12,7 @@
         <!--Guide View Controller-->
         <scene sceneID="dZu-80-tAh">
             <objects>
-                <pageViewController storyboardIdentifier="GuideController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="oIT-l0-rUN" customClass="GuideViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="GuideController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="oIT-l0-rUN" customClass="GuideViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t1c-al-ghp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-466" y="-529"/>

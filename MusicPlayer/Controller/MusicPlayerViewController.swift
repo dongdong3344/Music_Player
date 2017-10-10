@@ -182,10 +182,12 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         labelStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
         
-        NotificationManager.sharedInstance.addUpdatePlayerObserver(self, action: #selector(self.updateViews))
+        addNotifications()
         
         
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         
@@ -207,13 +209,63 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         removeHideVolumeSliderTimer()
         
-        NotificationManager.sharedInstance.removeObserver(self)
+        NotificationManager.shared.removeObserver(self)
     }
+    
+    
+    func addNotifications() {
+        
+        NotificationManager.shared.addUpdatePlayerObserver(self, action: #selector(self.updateViews))
+        NotificationManager.shared.audioSessionRouteChangeObserver(self,  action: #selector(audioSessionRouteChange(_:)))
+        
+        NotificationManager.shared.audioSessionInterruptionObserver(self, action: #selector(audioSessionInterrupt(_:)))
+       
+        
+    }
+    // MARK: - Notifications
+    func audioSessionRouteChange(_ notification:Notification){
+        
+        let routeChangeDict = notification.userInfo as! NSDictionary
+        
+        let routeChangeReason  = routeChangeDict.value(forKey: AVAudioSessionRouteChangeReasonKey) as! UInt
+        switch routeChangeReason {
+        case AVAudioSessionRouteChangeReason.newDeviceAvailable.rawValue:
+            print("插入耳机")
+            break
+        case AVAudioSessionRouteChangeReason.oldDeviceUnavailable.rawValue:
+            print("拔出耳机")
+            MusicPlayManager.shared.pause()
+            break
+        default:
+            break
+        }
+        
+    }
+    
+    func audioSessionInterrupt(_ notification:Notification){
+        let interruptionDict = notification.userInfo! as NSDictionary
+        let interruptionType   = interruptionDict.value(forKey: AVAudioSessionInterruptionTypeKey) as! Int
+        let interruptionOption  = interruptionDict.value(forKey: AVAudioSessionInterruptionOptionKey) as! Int
+         // 收到播放中断的通知暂停播放,
+        if interruptionType == Int(AVAudioSessionInterruptionType.began.rawValue) {
+            MusicPlayManager.shared.pause()
+       
+        }
+        
+        // 中断结束，判断是否需要恢复播放
+        if interruptionOption == Int(AVAudioSessionInterruptionOptions.shouldResume.rawValue){
+            
+            MusicPlayManager.shared.play()
+           
+        }
+            
+      }
+
     
     // MARK: - Update Views
     func updateViews(){
         
-        setupPlayerUI()
+        setupPlayerUI
         
         startTimer()
         

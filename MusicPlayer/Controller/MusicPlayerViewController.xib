@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -185,22 +185,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mJg-xV-l5A">
-                            <rect key="frame" x="116" y="25" width="63.5" height="19"/>
+                            <rect key="frame" x="131.5" y="25" width="32.5" height="19"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="— " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D61-cp-fcG">
-                                    <rect key="frame" x="0.0" y="0.0" width="15.5" height="19"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="airtist" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gO-OK-qXf">
-                                    <rect key="frame" x="15.5" y="0.0" width="32.5" height="19"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" —" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCP-hj-Wdc">
-                                    <rect key="frame" x="48" y="0.0" width="15.5" height="19"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="32.5" height="19"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
@@ -224,6 +212,16 @@
                         <action selector="dropButtonClick:" destination="-1" eventType="touchUpInside" id="J7U-JM-arh"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNm-4Z-fxp" userLabel="分割线">
+                    <rect key="frame" x="0.0" y="66" width="375" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="0.5" id="xsY-g4-kC8"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -251,7 +249,10 @@
                 <constraint firstAttribute="trailing" secondItem="vFR-9b-VPP" secondAttribute="trailing" constant="5" id="blt-yg-5VP"/>
                 <constraint firstItem="s9j-KL-7mi" firstAttribute="centerY" secondItem="qKj-tc-1QQ" secondAttribute="centerY" id="gQm-6K-Qeb"/>
                 <constraint firstAttribute="trailing" secondItem="7fw-fp-PBJ" secondAttribute="trailing" id="gdY-gZ-aT3"/>
+                <constraint firstAttribute="trailing" secondItem="xNm-4Z-fxp" secondAttribute="trailing" id="iVf-cm-6c4"/>
                 <constraint firstItem="3Ep-ck-JZG" firstAttribute="centerY" secondItem="BK2-m1-tQB" secondAttribute="centerY" multiplier="0.8" id="jbj-sx-Vux"/>
+                <constraint firstItem="xNm-4Z-fxp" firstAttribute="top" secondItem="qKj-tc-1QQ" secondAttribute="bottom" constant="2" id="jg3-Se-iHA"/>
+                <constraint firstItem="xNm-4Z-fxp" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" id="jle-R5-a71"/>
                 <constraint firstItem="SEV-3r-QPf" firstAttribute="top" secondItem="HbA-TR-JKt" secondAttribute="bottom" constant="10" id="lmL-Tu-1vH"/>
                 <constraint firstItem="VGq-DL-OaX" firstAttribute="centerY" secondItem="BK2-m1-tQB" secondAttribute="centerY" multiplier="0.8" id="nSx-oN-9aX"/>
                 <constraint firstItem="7fw-fp-PBJ" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" id="ng1-fb-2w5"/>

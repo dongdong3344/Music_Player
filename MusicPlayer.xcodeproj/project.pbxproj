@@ -200,7 +200,6 @@
 			children = (
 				C72F9CD01F8B1F6600305AAC /* MusicCell.swift */,
 				C72F9CD31F8B1F9600305AAC /* MusicCell.xib */,
-				C72F9CD41F8B1F9600305AAC /* MusicPlayerViewController.xib */,
 				C72F9CD21F8B1F9600305AAC /* SearchFooter.swift */,
 			);
 			path = View;
@@ -216,6 +215,7 @@
 				C72F9CE41F8B20A000305AAC /* MusicListViewControllerExtension.swift */,
 				C72F9CE81F8B20A100305AAC /* MusicPlayerViewController.swift */,
 				C72F9CE71F8B20A100305AAC /* MusicPlayerControllerExtension.swift */,
+				C72F9CD41F8B1F9600305AAC /* MusicPlayerViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

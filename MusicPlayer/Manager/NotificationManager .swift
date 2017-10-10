@@ -12,7 +12,7 @@ let NOTI_UPDATE_PLAYER = Notification.Name("update_player")
 
 class NotificationManager{
     
-    static let sharedInstance = NotificationManager()
+    static let shared = NotificationManager()
     
     func removeObserver(_ observer: AnyObject) {
         NotificationCenter.default.removeObserver(observer)
@@ -26,4 +26,18 @@ class NotificationManager{
         NotificationCenter.default.addObserver(target, selector: action, name: NOTI_UPDATE_PLAYER, object: nil)
     }
     
+    
+     // 插拔耳机
+    func audioSessionRouteChangeObserver(_ target: AnyObject, action: Selector) {
+        
+        NotificationCenter.default.addObserver(target, selector: action, name: .AVAudioSessionRouteChange, object: nil)
+        
+    }
+    
+    // 播放打断 (如来电等)
+    func audioSessionInterruptionObserver(_ target: AnyObject, action: Selector) {
+        
+        NotificationCenter.default.addObserver(target, selector: action, name: .AVAudioSessionInterruption, object: nil)
+        
+    }
 }
