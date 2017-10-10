@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if #available(iOS 11.0, *) {
             UINavigationBar.appearance().prefersLargeTitles = true
-            let font = UIFont.init(name: "Pacifico-Regular", size: 35)!
+            let font = UIFont.init(name: "Pacifico-Regular", size: 40)!
             UINavigationBar.appearance().largeTitleTextAttributes = [NSForegroundColorAttributeName: UIColor.white,NSFontAttributeName:font]
         } else {
             // Fallback on earlier versions

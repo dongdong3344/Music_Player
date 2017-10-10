@@ -20,6 +20,7 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
         let searchVC  = CustomSearchController(searchResultsController: nil)
         searchVC.searchBar.delegate = self
         searchVC.searchResultsUpdater = self
+        
         return searchVC
         
     }()
@@ -67,11 +68,7 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
             present(pageVC, animated: true, completion: nil)
         }
         
-
         animateTableView()
-        
-        
-        
         
        
     }

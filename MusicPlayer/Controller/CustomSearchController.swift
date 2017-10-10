@@ -23,6 +23,7 @@ class CustomSearchController:UISearchController{
         self.searchBar.placeholder = "搜索歌单内歌曲"
         self.searchBar.textField?.textColor = UIColor.white
         self.searchBar.placehloderLabel?.textColor = .white
+        self.searchBar.tintColor = UIColor.lightGray
         self.searchBar.placehloderLabel?.font = UIFont.systemFont(ofSize: 15)
         
     }
