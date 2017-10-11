@@ -217,6 +217,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     func addNotifications() {
         
         NotificationManager.shared.addUpdatePlayerObserver(self, action: #selector(self.updateViews))
+        
         NotificationManager.shared.audioSessionRouteChangeObserver(self,  action: #selector(audioSessionRouteChange(_:)))
         
         NotificationManager.shared.audioSessionInterruptionObserver(self, action: #selector(audioSessionInterrupt(_:)))

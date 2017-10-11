@@ -24,6 +24,23 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
         return searchVC
         
     }()
+    
+    lazy var imageView :UIImageView = {
+        
+        for i in 1...6{
+            if let image = UIImage(named: "cm2_topbar_icn_playing\(i)") {
+                self.imageArray.append(image)
+            }
+        }
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        imageView.image = self.imageArray.first
+        imageView.animationImages = self.imageArray
+        imageView.animationDuration = 1.0
+        imageView.animationRepeatCount = 0
+        return imageView
+        
+    }()
+    
     var imageArray = [UIImage]()
     var musics = [Music]()
     var filteredMusics = [Music]()
@@ -58,25 +75,24 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     func setupLeftBarItem(){
         
-        for i in 1...6{
-            if let image = UIImage(named: "cm2_topbar_icn_playing\(i)") {
-                imageArray.append(image)
-            }
-        }
-        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
-        imageView.animationImages = imageArray
-        imageView.animationDuration = 1.0
-        imageView.animationRepeatCount = 0
-        imageView.startAnimating()
+       
         let leftBarItem = UIBarButtonItem(customView: imageView)
         navigationItem.leftBarButtonItem = leftBarItem
         
+    
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
        
         selectRow()
+        
+        //判断图片是否animating
+        if MusicPlayManager.shared.player.isPlaying == true {
+            imageView.startAnimating()
+        }else{
+            imageView.stopAnimating()
+        }
         
         //显示引导页
         
@@ -89,6 +105,9 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
         }
         
         animateTableView()
+        
+    
+        
         
        
     }

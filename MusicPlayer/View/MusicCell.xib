@@ -51,7 +51,7 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="lks-nW-hdQ" customClass="CustomImageView" customModule="MusicPlayer" customModuleProvider="target">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lks-nW-hdQ" customClass="CustomImageView" customModule="MusicPlayer" customModuleProvider="target">
                         <rect key="frame" x="290" y="20.5" width="45" height="45"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="45" id="2K3-C6-WQT"/>
@@ -118,7 +118,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="background" width="320" height="568"/>
         <image name="cm2_vol_btn_speaker" width="19" height="19"/>
     </resources>
 </document>
