@@ -24,7 +24,7 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
         return searchVC
         
     }()
-    
+    var imageArray = [UIImage]()
     var musics = [Music]()
     var filteredMusics = [Music]()
     let identifier = "cellID"
@@ -50,7 +50,27 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
             self.hotSearchTags = searchHotTags
         }
     
+
+        setupLeftBarItem()
+       
      
+    }
+    
+    func setupLeftBarItem(){
+        
+        for i in 1...6{
+            if let image = UIImage(named: "cm2_topbar_icn_playing\(i)") {
+                imageArray.append(image)
+            }
+        }
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        imageView.animationImages = imageArray
+        imageView.animationDuration = 1.0
+        imageView.animationRepeatCount = 0
+        imageView.startAnimating()
+        let leftBarItem = UIBarButtonItem(customView: imageView)
+        navigationItem.leftBarButtonItem = leftBarItem
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
