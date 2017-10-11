@@ -74,11 +74,22 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
             playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_play_prs"), for: .normal)
             MusicPlayManager.shared.pause()
             stopTimer()
+            setAnchorPoint(CGPoint(x: 42/97.0, y: 42/153.0), for: needleImgView)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.needleImgView.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 4))
+            }, completion: nil)
             
         }else{
             playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_pause_prs"), for: .normal)
             MusicPlayManager.shared.play()
             startTimer()
+            
+            setAnchorPoint(CGPoint(x: 25/97.0, y: 25/153.0), for: needleImgView)
+            UIView.animate(withDuration: 0.5, animations: {
+                self.needleImgView.transform = .identity
+            }, completion: nil)
+           
+           
             
         }
         
@@ -214,6 +225,21 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     
+    func setAnchorPoint(_ anchorPoint:CGPoint, for view:UIView){
+        
+        let oldOrigin = view.frame.origin;
+        view.layer.anchorPoint = anchorPoint;
+        let newOrigin = view.frame.origin;
+        
+        var transition = CGPoint()
+        transition.x = newOrigin.x - oldOrigin.x;
+        transition.y = newOrigin.y - oldOrigin.y;
+        view.center = CGPoint(x: view.center.x - transition.x, y: view.center.y - transition.y)
+     
+    }
+    
+    // MARK: - Notifications
+    
     func addNotifications() {
         
         NotificationManager.shared.addUpdatePlayerObserver(self, action: #selector(self.updateViews))
@@ -224,7 +250,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
        
         
     }
-    // MARK: - Notifications
+    
     func audioSessionRouteChange(_ notification:Notification){
         
         let routeChangeDict = notification.userInfo! as NSDictionary
