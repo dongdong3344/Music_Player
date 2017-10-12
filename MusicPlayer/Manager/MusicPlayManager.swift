@@ -67,9 +67,7 @@ class MusicPlayManager: NSObject,AVAudioPlayerDelegate {
         } catch let error {
             
             print(error.localizedDescription)
-            
-            
-            
+       
         }
         
     }

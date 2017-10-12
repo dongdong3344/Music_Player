@@ -24,7 +24,6 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var playDiskImageView: UIImageView!
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var artworkImageView: UIImageView!
-    
     @IBOutlet weak var containerView: UIView!
     
     var timer : Timer!
@@ -102,7 +101,6 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     func rotateNeedleImageView(){
         
         setAnchorPoint(CGPoint(x: 25 / 97.0, y:25 / 153.0), for: needleImgView)
-        
         UIView.animate(withDuration: 0.25) {
             self.needleImgView.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi / 5))
            
@@ -112,7 +110,6 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     func recoverNeedleImageView(){
         
         setAnchorPoint(CGPoint(x:25 / 97.0, y:25 / 153.0), for: needleImgView)
-        
         UIView.animate(withDuration: 0.25) {
              self.needleImgView.transform = .identity
         }
