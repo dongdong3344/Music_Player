@@ -25,7 +25,8 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var circleImageView: UIImageView!
     @IBOutlet weak var artworkImageView: UIImageView!
     
-    @IBOutlet weak var needleImgView: UIImageView!
+    @IBOutlet weak var containerView: UIView!
+    
     var timer : Timer!
     var hideVolumeSliderTimer : Timer!
     var displayLink:CADisplayLink!
@@ -39,6 +40,16 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         label.layer.cornerRadius = 5
         label.layer.masksToBounds = true
         return label
+        
+    }()
+    
+    let needleImgView :UIImageView = {
+        
+        let imgView = UIImageView()
+        imgView.image = #imageLiteral(resourceName: "cm2_play_needle_play")
+       // imgView.backgroundColor = .yellow
+        imgView.translatesAutoresizingMaskIntoConstraints = false
+        return imgView
         
     }()
     
@@ -69,28 +80,41 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         setupDisplayLink()
         
-        if !playOrPauseButton.isSelected {
+        if !sender.isSelected {
             
             playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_play_prs"), for: .normal)
             MusicPlayManager.shared.pause()
             stopTimer()
-            setAnchorPoint(CGPoint(x: 42/97.0, y: 42/153.0), for: needleImgView)
-            UIView.animate(withDuration: 0.5, animations: {
-                self.needleImgView.transform = CGAffineTransform(rotationAngle: CGFloat(-Double.pi / 4))
-            }, completion: nil)
+            rotateNeedleImageView()
             
         }else{
             playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_pause_prs"), for: .normal)
             MusicPlayManager.shared.play()
             startTimer()
+            recoverNeedleImageView()
             
-            setAnchorPoint(CGPoint(x: 25/97.0, y: 25/153.0), for: needleImgView)
-            UIView.animate(withDuration: 0.5, animations: {
-                self.needleImgView.transform = .identity
-            }, completion: nil)
+        }
+        
+   
+    }
+    
+    // MARK: - Rotate or Recover NeedleImageView
+    func rotateNeedleImageView(){
+        
+        setAnchorPoint(CGPoint(x: 25 / 97.0, y:25 / 153.0), for: needleImgView)
+        
+        UIView.animate(withDuration: 0.25) {
+            self.needleImgView.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi / 5))
            
-           
-            
+        }
+    }
+    
+    func recoverNeedleImageView(){
+        
+        setAnchorPoint(CGPoint(x:25 / 97.0, y:25 / 153.0), for: needleImgView)
+        
+        UIView.animate(withDuration: 0.25) {
+             self.needleImgView.transform = .identity
         }
         
     }
@@ -116,20 +140,21 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
     // MARK: - Previous and Next Play Animation
     func setupPreviousPlay(){
-        
+       
        MusicPlayManager.shared.playPrevious()
         // 播放下一首或上一首时，图片回到初始位置
        artworkImageView.transform = .identity
         //当前按钮是暂停状态则修改为开始状态，再设置定时器状态
         if !playOrPauseButton.isSelected {
             playOrPauseButton.isSelected = true
+            recoverNeedleImageView()
             setupDisplayLink()
         }
         
-        UIView.animate(withDuration: 0.25, animations: {[unowned self] in
+        UIView.animate(withDuration: 0.25, animations: {_ in
             self.artworkImageView.center = CGPoint(x: self.artworkImageView.frame.size.width * 0.5 +  UIScreen.main.bounds.size.width, y: self.artworkImageView.center.y)
             self.playDiskImageView.center = CGPoint(x: self.playDiskImageView.frame.size.width * 0.5  + UIScreen.main.bounds.size.width, y: self.playDiskImageView.center.y)
-        }) { [unowned self] (finished:Bool) in
+        }) { (finished:Bool) in
             self.artworkImageView.center = self.circleImageView.center
             self.playDiskImageView.center = self.circleImageView.center
         }
@@ -138,20 +163,23 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
     func setupNextPlay(){
         
+        
+        
         MusicPlayManager.shared.playNext()
         
         artworkImageView.transform = .identity
         
         if !playOrPauseButton.isSelected {
              playOrPauseButton.isSelected = true
-            setupDisplayLink()
+             recoverNeedleImageView()
+             setupDisplayLink()
         }
         
-        UIView.animate(withDuration: 0.25, animations: { [unowned self] in
+        UIView.animate(withDuration: 0.25, animations: { _ in
             
             self.artworkImageView.center = CGPoint(x: -self.artworkImageView.frame.size.width, y: self.artworkImageView.center.y)
             self.playDiskImageView.center = CGPoint(x: -self.playDiskImageView.frame.size.width, y: self.playDiskImageView.center.y)
-        }) { [unowned self] (finished:Bool) in
+        }) { (finished:Bool) in
             
             self.artworkImageView.center = self.circleImageView.center
             self.playDiskImageView.center = self.circleImageView.center
@@ -190,12 +218,29 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         setupDisplayLink()
         
-       artworkImageView.setAsCircle(borderWidth: 1, borderColor: .black)
+        artworkImageView.setAsCircle(borderWidth: 1, borderColor: .black)
         
         labelStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
         
         addNotifications()
         
+        containerView.addSubview(needleImgView)
+        
+        setupContrains()
+        
+        
+        
+        
+    }
+    
+    
+    func setupContrains(){
+        
+        needleImgView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor,constant: 20).isActive = true
+
+        needleImgView.topAnchor.constraint(equalTo: containerView.topAnchor, constant: -28).isActive = true
+        needleImgView.widthAnchor.constraint(equalToConstant: 97).isActive = true
+        needleImgView.heightAnchor.constraint(equalToConstant: 153).isActive = true
         
     }
     
@@ -224,7 +269,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         NotificationManager.shared.removeObserver(self)
     }
     
-    
+    // MARK: -  Set AnchorPoint
     func setAnchorPoint(_ anchorPoint:CGPoint, for view:UIView){
         
         let oldOrigin = view.frame.origin;
@@ -237,7 +282,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         view.center = CGPoint(x: view.center.x - transition.x, y: view.center.y - transition.y)
      
     }
-    
+
     // MARK: - Notifications
     
     func addNotifications() {
@@ -246,7 +291,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         NotificationManager.shared.audioSessionRouteChangeObserver(self,  action: #selector(audioSessionRouteChange(_:)))
         
-        NotificationManager.shared.audioSessionInterruptionObserver(self, action: #selector(audioSessionInterrupt(_:)))
+      //  NotificationManager.shared.audioSessionInterruptionObserver(self, action: #selector(audioSessionInterrupt(_:)))
        
         
     }
