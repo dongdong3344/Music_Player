@@ -161,13 +161,13 @@ extension MusicPlayerViewController{
         let newMode = MusicPlayManager.shared.changePlayMode()
         switch newMode {
         case .ListLoop:
-            imageName = "cm2_icn_loop_prs"
+            imageName = "cm2_icn_loop"
             showText = "列表循环"
         case .SingleLoop:
-            imageName = "cm2_icn_order_prs-1"
+            imageName = "cm2_icn_one"
             showText = "单曲循环"
         case .Random:
-            imageName = "cm2_icn_shuffle_prs"
+            imageName = "cm2_icn_shuffle"
             showText = "随机播放"
         }
         loopButton.setImage(UIImage(named: imageName), for: UIControlState())
@@ -184,13 +184,13 @@ extension MusicPlayerViewController{
         let currentMode = MusicPlayManager.shared.currentPlayMode()
         switch currentMode {
         case .ListLoop:
-            imageName = "cm2_icn_loop_prs"
+            imageName = "cm2_icn_loop"
             
         case .SingleLoop:
-            imageName = "cm2_icn_order_prs-1"
+            imageName = "cm2_icn_one"
             
         case .Random:
-            imageName = "cm2_icn_shuffle_prs"
+            imageName = "cm2_icn_shuffle"
             
         }
         loopButton.setImage(UIImage(named: imageName), for: UIControlState())

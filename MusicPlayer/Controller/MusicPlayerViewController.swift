@@ -12,7 +12,6 @@ import AVFoundation
 class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var volumeSlider: CustomSlider!
-    @IBOutlet weak var labelStackView: UIStackView!
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var timeSlider: CustomSlider!
     @IBOutlet weak var totalTimeLabel: UILabel!
@@ -58,7 +57,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         MusicPlayManager.shared.setVolume(volume: sender.value)
     }
     
-    @IBAction func dropButtonClick(_ sender: UIButton) {
+    @IBAction func backButtonClick(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
             self.view.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
@@ -80,24 +79,23 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         setupDisplayLink()
         
         if !sender.isSelected {
-            
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_play_prs"), for: .normal)
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_play"), for: .normal)
             MusicPlayManager.shared.pause()
             stopTimer()
             rotateNeedleImageView()
             
         }else{
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_pause_prs"), for: .normal)
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_pause"), for: .normal)
+            recoverNeedleImageView()
             MusicPlayManager.shared.play()
             startTimer()
-            recoverNeedleImageView()
-            
+        
         }
         
    
     }
     
-    // MARK: - Rotate or Recover NeedleImageView
+    // MARK: - Rotate or Recover Needle
     func rotateNeedleImageView(){
         
         setAnchorPoint(CGPoint(x: 25 / 97.0, y:25 / 153.0), for: needleImgView)
@@ -160,8 +158,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
     func setupNextPlay(){
         
-        
-        
+
         MusicPlayManager.shared.playNext()
         
         artworkImageView.transform = .identity
@@ -217,21 +214,17 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         artworkImageView.setAsCircle(borderWidth: 1, borderColor: .black)
         
-        labelStackView.transform = CGAffineTransform(scaleX: 0, y: 0)
-        
         addNotifications()
         
         containerView.addSubview(needleImgView)
         
-        setupContrains()
-        
-        
-        
+        setupConstrains()
+  
         
     }
     
-    
-    func setupContrains(){
+    // 约束条件
+    func setupConstrains(){
         
         needleImgView.centerXAnchor.constraint(equalTo: containerView.centerXAnchor,constant: 20).isActive = true
 
@@ -242,18 +235,6 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        super.viewDidAppear(animated)
-        
-        
-        UIView.animate(withDuration: 0.5) {
-            
-             self.labelStackView.transform = .identity
-        }
-        
-    }
     
     override func viewDidDisappear(_ animated: Bool) {
         
@@ -280,20 +261,20 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
      
     }
 
-    // MARK: - Notifications
+    // MARK: - Add Notifications
     
     func addNotifications() {
         
         NotificationManager.shared.addUpdatePlayerObserver(self, action: #selector(self.updateViews))
         
-        NotificationManager.shared.audioSessionRouteChangeObserver(self,  action: #selector(audioSessionRouteChange(_:)))
+        NotificationManager.shared.audioSessionRouteChangeObserver(self,  action: #selector(handleRouteChange(_:)))
         
-      //  NotificationManager.shared.audioSessionInterruptionObserver(self, action: #selector(audioSessionInterrupt(_:)))
+        NotificationManager.shared.audioSessionInterruptionObserver(self, action: #selector(handleInterrupt(_:)))
        
         
     }
     
-    func audioSessionRouteChange(_ notification:Notification){
+    func handleRouteChange(_ notification:Notification){
         
         let routeChangeDict = notification.userInfo! as NSDictionary
         
@@ -314,9 +295,10 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
     }
     
-    func audioSessionInterrupt(_ notification:Notification){
+    //处理中断事件
+    func handleInterrupt(_ notification:Notification){
         let interruptionDict = notification.userInfo! as NSDictionary
-        let interruptionType   = interruptionDict.value(forKey: AVAudioSessionInterruptionTypeKey) as? UInt
+        let interruptionType = interruptionDict.value(forKey: AVAudioSessionInterruptionTypeKey) as? UInt
         let interruptionOption  = interruptionDict.value(forKey: AVAudioSessionInterruptionOptionKey) as? UInt
          // 收到播放中断的通知暂停播放,
         if interruptionType == AVAudioSessionInterruptionType.began.rawValue {
@@ -326,9 +308,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
         // 中断结束，判断是否需要恢复播放
         if interruptionOption == AVAudioSessionInterruptionOptions.shouldResume.rawValue{
-            
             MusicPlayManager.shared.play()
-           
         }
             
       }
@@ -358,7 +338,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
 
         totalTimeLabel.text = MusicPlayManager.shared.getDurationAsString()
         
-        playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_pause_prs"), for: .normal)
+        playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_pause"), for: .normal)
         
     }
     // MARK: - Timer

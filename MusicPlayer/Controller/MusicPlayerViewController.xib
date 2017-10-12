@@ -19,7 +19,6 @@
                 <outlet property="circleImageView" destination="mpa-ow-3hk" id="3On-Ha-iyJ"/>
                 <outlet property="containerView" destination="kLI-M9-EuY" id="r3E-ya-o4p"/>
                 <outlet property="currentTimeLabel" destination="0Gz-mf-bSa" id="xPE-h1-HRD"/>
-                <outlet property="labelStackView" destination="qKj-tc-1QQ" id="L2S-3y-h5h"/>
                 <outlet property="loopButton" destination="bS1-ll-DNc" id="gFm-Gz-zps"/>
                 <outlet property="playDiskImageView" destination="3Ep-ck-JZG" id="yoq-y6-EIj"/>
                 <outlet property="playOrPauseButton" destination="Xv4-Ea-0TJ" id="qrd-qD-oEc"/>
@@ -58,70 +57,57 @@
                     </constraints>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SEV-3r-QPf">
-                    <rect key="frame" x="0.0" y="577" width="375" height="75"/>
+                    <rect key="frame" x="10" y="584" width="355" height="68"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS1-ll-DNc">
-                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="bS1-ll-DNc" secondAttribute="height" id="sev-Uc-ips"/>
-                            </constraints>
+                            <rect key="frame" x="0.0" y="12" width="44" height="44"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="cm2_icn_loop_prs"/>
+                            <state key="normal" image="cm2_icn_loop"/>
+                            <state key="highlighted" image="cm2_icn_loop_prs"/>
                             <connections>
                                 <action selector="loopButtonClick:" destination="-1" eventType="touchUpInside" id="eQT-V3-LKf"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYq-0x-Ynr">
-                            <rect key="frame" x="84.5" y="9.5" width="56" height="56"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="KYq-0x-Ynr" secondAttribute="height" multiplier="1:1" id="pK2-t6-5Y2"/>
-                            </constraints>
+                            <rect key="frame" x="69.5" y="9.5" width="49" height="49"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="cm2_vehicle_btn_prev_prs"/>
+                            <state key="normal" image="cm2_fm_btn_previous"/>
+                            <state key="highlighted" image="cm2_fm_btn_previous_prs"/>
                             <connections>
                                 <action selector="playPrevious:" destination="-1" eventType="touchUpInside" id="S9g-qK-bdW"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xv4-Ea-0TJ">
-                            <rect key="frame" x="150" y="0.0" width="75" height="75"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="Xv4-Ea-0TJ" secondAttribute="height" id="2Uk-Pi-Fzi"/>
-                            </constraints>
+                            <rect key="frame" x="143.5" y="0.0" width="68" height="68"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="cm2_vehicle_btn_pause_prs"/>
+                            <state key="normal" image="cm2_fm_btn_pause"/>
+                            <state key="highlighted" image="cm2_fm_btn_pause_prs"/>
                             <connections>
                                 <action selector="playOrPauseClick:" destination="-1" eventType="touchUpInside" id="J0C-Fv-Xmy"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeO-3y-Dn7">
-                            <rect key="frame" x="234.5" y="9.5" width="56" height="56"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="yeO-3y-Dn7" secondAttribute="height" id="nkz-Ac-m4V"/>
-                            </constraints>
+                            <rect key="frame" x="237" y="9.5" width="49" height="49"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="cm2_vehicle_btn_next_prs"/>
+                            <state key="normal" image="cm2_fm_btn_next"/>
+                            <state key="highlighted" image="cm2_fm_btn_next_prs"/>
                             <connections>
                                 <action selector="playNext:" destination="-1" eventType="touchUpInside" id="6LC-lv-uhy"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRK-61-MXR">
-                            <rect key="frame" x="300" y="0.0" width="75" height="75"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="YRK-61-MXR" secondAttribute="height" multiplier="1:1" id="PeA-3a-TA7"/>
-                            </constraints>
+                            <rect key="frame" x="311" y="12" width="44" height="44"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" image="cm2_icn_list_prs"/>
+                            <state key="normal" image="cm2_icn_list"/>
+                            <state key="highlighted" image="cm2_icn_list_prs"/>
                             <connections>
                                 <action selector="audioListClick:" destination="-1" eventType="touchUpInside" id="HKf-nq-UbX"/>
                             </connections>
                         </button>
                     </subviews>
-                    <constraints>
-                        <constraint firstItem="bS1-ll-DNc" firstAttribute="baseline" secondItem="YRK-61-MXR" secondAttribute="baseline" id="noQ-o9-stQ"/>
-                    </constraints>
                 </stackView>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="HbA-TR-JKt" customClass="CustomSlider" customModule="MusicPlayer" customModuleProvider="target">
-                    <rect key="frame" x="55" y="547" width="265" height="21"/>
+                    <rect key="frame" x="55" y="554" width="265" height="21"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="nG8-1x-MYp"/>
@@ -135,7 +121,7 @@
                     </userDefinedRuntimeAttributes>
                 </slider>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFR-9b-VPP">
-                    <rect key="frame" x="320" y="547" width="50" height="20"/>
+                    <rect key="frame" x="320" y="554" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="YUW-qR-R8D"/>
                         <constraint firstAttribute="width" constant="50" id="xKY-L0-sea"/>
@@ -145,7 +131,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gz-mf-bSa">
-                    <rect key="frame" x="5" y="547" width="50" height="20"/>
+                    <rect key="frame" x="5" y="554" width="50" height="20"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="50" id="F3h-0m-OKr"/>
                         <constraint firstAttribute="height" constant="20" id="M5B-Bw-j09"/>
@@ -158,8 +144,8 @@
                     <rect key="frame" x="40" y="20" width="295" height="44"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-nb-GRm">
-                            <rect key="frame" x="112" y="0.0" width="71" height="25"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <rect key="frame" x="110.5" y="0.0" width="74.5" height="25"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -191,21 +177,9 @@
                         <constraint firstAttribute="height" constant="44" id="FD7-Xu-gcX"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9j-KL-7mi">
-                    <rect key="frame" x="335" y="27" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="AcG-Hs-8GE"/>
-                        <constraint firstAttribute="width" constant="30" id="ytb-r2-tHE"/>
-                    </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <state key="normal" image="cm2_act_icn_droparr"/>
-                    <connections>
-                        <action selector="dropButtonClick:" destination="-1" eventType="touchUpInside" id="J7U-JM-arh"/>
-                    </connections>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNm-4Z-fxp" userLabel="分割线">
                     <rect key="frame" x="0.0" y="66" width="375" height="1"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" red="0.79790890433010042" green="0.79790890433010042" blue="0.79790890433010042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="0.5" id="xsY-g4-kC8"/>
                     </constraints>
@@ -214,30 +188,40 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JtZ-dF-jeG">
-                    <rect key="frame" x="30" y="488" width="315" height="49"/>
+                    <rect key="frame" x="30" y="490" width="315" height="49"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I9-iY-hws">
                             <rect key="frame" x="0.0" y="0.0" width="79" height="49"/>
-                            <state key="normal" image="cm2_fm_btn_love_prs"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="cm2_fm_btn_love"/>
+                            <state key="highlighted" image="cm2_play_icn_love"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4o-r9-lfy">
                             <rect key="frame" x="79" y="0.0" width="78.5" height="49"/>
-                            <state key="normal" image="cm2_icn_dld_prs"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="cm2_icn_dld"/>
+                            <state key="highlighted" image="cm2_icn_dld_prs"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TKO-rw-Tbi">
                             <rect key="frame" x="157.5" y="0.0" width="79" height="49"/>
                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <inset key="titleEdgeInsets" minX="-45" minY="-25" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="+999" image="cm2_fm_btn_cmt_number_prs"/>
+                            <state key="normal" title="+999" image="cm2_fm_btn_cmt_number"/>
+                            <state key="highlighted" image="cm2_fm_btn_cmt_number_prs">
+                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIE-2E-CdX">
                             <rect key="frame" x="236.5" y="0.0" width="78.5" height="49"/>
-                            <state key="normal" image="cm2_play_icn_more_prs"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="cm2_play_icn_more"/>
+                            <state key="highlighted" image="cm2_play_icn_more_prs"/>
                         </button>
                     </subviews>
                 </stackView>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" minimumValueImage="cm2_fm_vol_speaker_silent" maximumValueImage="cm2_fm_vol_speaker" translatesAutoresizingMaskIntoConstraints="NO" id="PEC-11-RlC" customClass="CustomSlider" customModule="MusicPlayer" customModuleProvider="target">
-                    <rect key="frame" x="8" y="438" width="359" height="31"/>
+                    <rect key="frame" x="8" y="440" width="359" height="31"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="LfX-Kn-pnk"/>
@@ -259,34 +243,48 @@
                         <constraint firstAttribute="height" constant="200" id="M19-TP-RmQ"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9dy-o6-t1W">
+                    <rect key="frame" x="337" y="28" width="28" height="28"/>
+                    <state key="normal" image="cm2_topbar_icn_share"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s9j-KL-7mi" userLabel="backButton">
+                    <rect key="frame" x="10" y="27" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="AcG-Hs-8GE"/>
+                        <constraint firstAttribute="width" constant="30" id="ytb-r2-tHE"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <state key="normal" image="cm2_icn_back"/>
+                    <connections>
+                        <action selector="backButtonClick:" destination="-1" eventType="touchUpInside" id="o1S-Zh-h3n"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="yeO-3y-Dn7" firstAttribute="width" secondItem="7fw-fp-PBJ" secondAttribute="width" multiplier="0.15" id="0au-Sa-qL9"/>
                 <constraint firstAttribute="trailing" secondItem="PEC-11-RlC" secondAttribute="trailing" constant="10" id="3lH-XI-yr1"/>
                 <constraint firstItem="VGq-DL-OaX" firstAttribute="centerX" secondItem="BK2-m1-tQB" secondAttribute="centerX" id="4Nc-ME-ekh"/>
                 <constraint firstItem="kLI-M9-EuY" firstAttribute="top" secondItem="xNm-4Z-fxp" secondAttribute="bottom" id="4qA-Fj-Kbp"/>
                 <constraint firstItem="mpa-ow-3hk" firstAttribute="centerX" secondItem="BK2-m1-tQB" secondAttribute="centerX" id="4qy-yI-QhS"/>
                 <constraint firstItem="7fw-fp-PBJ" firstAttribute="top" secondItem="BK2-m1-tQB" secondAttribute="top" id="4si-Rt-Nfa"/>
                 <constraint firstItem="HbA-TR-JKt" firstAttribute="leading" secondItem="0Gz-mf-bSa" secondAttribute="trailing" constant="2" id="6A6-Sy-xSp"/>
-                <constraint firstItem="YRK-61-MXR" firstAttribute="width" secondItem="7fw-fp-PBJ" secondAttribute="width" multiplier="0.2" id="97O-bo-p1q"/>
-                <constraint firstItem="HbA-TR-JKt" firstAttribute="top" secondItem="JtZ-dF-jeG" secondAttribute="bottom" constant="10" id="AFc-eB-l42"/>
+                <constraint firstItem="9dy-o6-t1W" firstAttribute="centerY" secondItem="qKj-tc-1QQ" secondAttribute="centerY" id="7nm-tj-vnU"/>
+                <constraint firstItem="HbA-TR-JKt" firstAttribute="top" secondItem="JtZ-dF-jeG" secondAttribute="bottom" constant="15" id="AFc-eB-l42"/>
                 <constraint firstItem="vFR-9b-VPP" firstAttribute="leading" secondItem="HbA-TR-JKt" secondAttribute="trailing" constant="2" id="Cnr-3R-yFu"/>
-                <constraint firstItem="Xv4-Ea-0TJ" firstAttribute="width" secondItem="7fw-fp-PBJ" secondAttribute="width" multiplier="0.2" id="EHX-01-o5y"/>
                 <constraint firstItem="kLI-M9-EuY" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" id="F3i-WY-GCR"/>
                 <constraint firstItem="0Gz-mf-bSa" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" constant="5" id="GY4-Fp-YX8"/>
                 <constraint firstItem="HbA-TR-JKt" firstAttribute="centerY" secondItem="vFR-9b-VPP" secondAttribute="centerY" id="GfX-TS-tYg"/>
                 <constraint firstAttribute="bottom" secondItem="7fw-fp-PBJ" secondAttribute="bottom" id="IMf-xa-cAj"/>
-                <constraint firstItem="s9j-KL-7mi" firstAttribute="leading" secondItem="qKj-tc-1QQ" secondAttribute="trailing" id="OMU-kx-xSw"/>
                 <constraint firstItem="3Ep-ck-JZG" firstAttribute="centerX" secondItem="BK2-m1-tQB" secondAttribute="centerX" id="OhB-kS-ahe"/>
                 <constraint firstItem="SEV-3r-QPf" firstAttribute="top" secondItem="0Gz-mf-bSa" secondAttribute="bottom" constant="10" id="Qag-QZ-fcj"/>
                 <constraint firstItem="3Ep-ck-JZG" firstAttribute="width" secondItem="mpa-ow-3hk" secondAttribute="width" multiplier="0.95" id="R7N-8f-3Uu"/>
-                <constraint firstItem="SEV-3r-QPf" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" id="T2X-hH-3jG"/>
+                <constraint firstItem="s9j-KL-7mi" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" constant="10" id="SAC-7d-kJ2"/>
+                <constraint firstItem="SEV-3r-QPf" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" constant="10" id="T2X-hH-3jG"/>
                 <constraint firstItem="PEC-11-RlC" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" constant="10" id="Th9-l1-pwd"/>
                 <constraint firstItem="mpa-ow-3hk" firstAttribute="centerY" secondItem="BK2-m1-tQB" secondAttribute="centerY" multiplier="0.8" id="UXt-V7-uw0"/>
-                <constraint firstAttribute="trailing" secondItem="SEV-3r-QPf" secondAttribute="trailing" id="amU-Ii-1DU"/>
-                <constraint firstAttribute="trailing" secondItem="s9j-KL-7mi" secondAttribute="trailing" constant="10" id="ayI-BC-bTc"/>
-                <constraint firstItem="bS1-ll-DNc" firstAttribute="width" secondItem="7fw-fp-PBJ" secondAttribute="width" multiplier="0.2" id="bMU-zx-ggB"/>
+                <constraint firstItem="qKj-tc-1QQ" firstAttribute="leading" secondItem="s9j-KL-7mi" secondAttribute="trailing" id="YAt-R4-Xmq"/>
+                <constraint firstAttribute="trailing" secondItem="qKj-tc-1QQ" secondAttribute="trailing" constant="40" id="aha-5w-iLT"/>
+                <constraint firstAttribute="trailing" secondItem="SEV-3r-QPf" secondAttribute="trailing" constant="10" id="amU-Ii-1DU"/>
                 <constraint firstAttribute="trailing" secondItem="vFR-9b-VPP" secondAttribute="trailing" constant="5" id="blt-yg-5VP"/>
                 <constraint firstAttribute="trailing" secondItem="kLI-M9-EuY" secondAttribute="trailing" id="dn3-0P-rzf"/>
                 <constraint firstItem="VGq-DL-OaX" firstAttribute="width" secondItem="3Ep-ck-JZG" secondAttribute="width" multiplier="0.7" id="fQf-w5-rqV"/>
@@ -304,7 +302,7 @@
                 <constraint firstItem="qKj-tc-1QQ" firstAttribute="top" secondItem="BK2-m1-tQB" secondAttribute="top" constant="20" id="rRo-M5-Iwh"/>
                 <constraint firstItem="JtZ-dF-jeG" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" constant="30" id="t6p-JI-3uq"/>
                 <constraint firstItem="JtZ-dF-jeG" firstAttribute="top" secondItem="PEC-11-RlC" secondAttribute="bottom" constant="20" id="taL-py-U6Y"/>
-                <constraint firstItem="KYq-0x-Ynr" firstAttribute="width" secondItem="7fw-fp-PBJ" secondAttribute="width" multiplier="0.15" id="tuK-AJ-rjT"/>
+                <constraint firstAttribute="trailing" secondItem="9dy-o6-t1W" secondAttribute="trailing" constant="10" id="v2O-Oc-3GO"/>
                 <constraint firstItem="qKj-tc-1QQ" firstAttribute="leading" secondItem="BK2-m1-tQB" secondAttribute="leading" constant="40" id="z4w-1z-ZKw"/>
                 <constraint firstAttribute="trailing" secondItem="JtZ-dF-jeG" secondAttribute="trailing" constant="30" id="zJe-k6-eHb"/>
             </constraints>
@@ -312,22 +310,32 @@
         </view>
     </objects>
     <resources>
-        <image name="cm2_act_icn_droparr" width="13" height="7"/>
         <image name="cm2_default_cover_program" width="212" height="212"/>
         <image name="cm2_default_play_bg" width="320" height="480"/>
+        <image name="cm2_fm_btn_cmt_number" width="49" height="49"/>
         <image name="cm2_fm_btn_cmt_number_prs" width="49" height="49"/>
-        <image name="cm2_fm_btn_love_prs" width="49" height="49"/>
+        <image name="cm2_fm_btn_love" width="49" height="49"/>
+        <image name="cm2_fm_btn_next" width="49" height="49"/>
+        <image name="cm2_fm_btn_next_prs" width="49" height="49"/>
+        <image name="cm2_fm_btn_pause" width="68" height="68"/>
+        <image name="cm2_fm_btn_pause_prs" width="68" height="68"/>
+        <image name="cm2_fm_btn_previous" width="49" height="49"/>
+        <image name="cm2_fm_btn_previous_prs" width="49" height="49"/>
         <image name="cm2_fm_vol_speaker" width="28" height="28"/>
         <image name="cm2_fm_vol_speaker_silent" width="28" height="28"/>
+        <image name="cm2_icn_back" width="25" height="25"/>
+        <image name="cm2_icn_dld" width="49" height="49"/>
         <image name="cm2_icn_dld_prs" width="44" height="44"/>
+        <image name="cm2_icn_list" width="44" height="44"/>
         <image name="cm2_icn_list_prs" width="44" height="44"/>
+        <image name="cm2_icn_loop" width="44" height="44"/>
         <image name="cm2_icn_loop_prs" width="44" height="44"/>
         <image name="cm2_play_disc" width="298" height="298"/>
+        <image name="cm2_play_icn_love" width="40" height="40"/>
+        <image name="cm2_play_icn_more" width="49" height="49"/>
         <image name="cm2_play_icn_more_prs" width="40" height="40"/>
         <image name="cm2_runfm_circle" width="270" height="270"/>
-        <image name="cm2_vehicle_btn_next_prs" width="82" height="82"/>
-        <image name="cm2_vehicle_btn_pause_prs" width="90" height="90"/>
-        <image name="cm2_vehicle_btn_prev_prs" width="82" height="82"/>
+        <image name="cm2_topbar_icn_share" width="28" height="28"/>
         <image name="music_slider_circle" width="25" height="25"/>
         <image name="thumb" width="20" height="20"/>
     </resources>
