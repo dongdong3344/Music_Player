@@ -197,7 +197,9 @@ class MusicListViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         UserDefaults.standard.saveIndex(value: indexPath.row)
+         
         let presentVC = MusicPlayerViewController()
         present(presentVC, animated: true) {
             MusicPlayManager.shared.play()

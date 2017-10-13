@@ -73,7 +73,7 @@ static func getMusicList(completion:@escaping ([Music]) -> Void){
                     }
                     
                 }
-                let music = Music(artwork: musicImage!, title: musicTitle!, artist: musicArtist!, album: musicAlbum!,muscicURL:musicURL!)
+                let music = Music(artwork: musicImage!, title: musicTitle ?? "Unknown", artist: musicArtist ?? "Unknown", album: musicAlbum ?? "Unknown",muscicURL:musicURL!)
                 musics.append(music)
                 
             }

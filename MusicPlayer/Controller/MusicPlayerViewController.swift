@@ -12,6 +12,8 @@ import MediaPlayer
 
 class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var previousButton: UIButton!
     @IBOutlet weak var volumeSlider: CustomSlider!
     @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet weak var timeSlider: CustomSlider!
@@ -144,7 +146,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     // MARK: - Previous and Next Play Animation
     func setupPreviousPlay(){
     
-        setupNeedleAndPlay()
+        setupNeedleAndPlay(sender: previousButton)
         
         UIView.animate(withDuration: 0.25, animations: {_ in
             self.artworkImageView.center = CGPoint(x: self.artworkImageView.frame.size.width * 0.5 +  UIScreen.main.bounds.size.width, y: self.artworkImageView.center.y)
@@ -158,7 +160,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
     func setupNextPlay(){
         
-        setupNeedleAndPlay()
+        setupNeedleAndPlay(sender: nextButton)
         
         UIView.animate(withDuration: 0.25, animations: { _ in
             
@@ -173,7 +175,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     
-    func setupNeedleAndPlay() {
+    func setupNeedleAndPlay(sender: UIButton) {
         
         rotateNeedleImageView()
         playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_play"), for: .normal)
@@ -182,7 +184,12 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
             self.recoverNeedleImageView()
             self.artworkImageView.transform = .identity
             self.playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_pause"), for: .normal)
-            MusicPlayManager.shared.playNext()
+            if sender == self.previousButton{
+                MusicPlayManager.shared.playPrevious()
+            }else{
+                MusicPlayManager.shared.playNext()
+            }
+            
         }
         if !playOrPauseButton.isSelected {
             playOrPauseButton.isSelected = true
@@ -238,7 +245,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         //接受远程控制
         UIApplication.shared.beginReceivingRemoteControlEvents()
         
-        setPlayingInfo()
+        MusicPlayManager.shared.setPlayingInfo()
     }
     
     // 约束条件
@@ -266,18 +273,14 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         UIApplication.shared.endReceivingRemoteControlEvents()
     }
     
-    
     // MARK: -  Remote Control
     override func remoteControlReceived(with event: UIEvent?) {
         guard let event = event else { return }
         if event.type == .remoteControl {
             switch event.subtype {
             case .remoteControlTogglePlayPause:
-                if !MusicPlayManager.shared.player.isPlaying {
-                    MusicPlayManager.shared.pause()
-                } else {
-                    MusicPlayManager.shared.play()
-                }
+                playOrPauseClick(playOrPauseButton)
+                break
             case .remoteControlPlay:
                 MusicPlayManager.shared.play()
                 break
@@ -285,43 +288,21 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
             case .remoteControlPause:
                 MusicPlayManager.shared.pause()
                 break
-          
+                
             case .remoteControlNextTrack:
                 playNext(playOrPauseButton)
-                setPlayingInfo()
+                MusicPlayManager.shared.setPlayingInfo()
                 break
             case .remoteControlPreviousTrack:
                 playPrevious(playOrPauseButton)
-                setPlayingInfo()
+                MusicPlayManager.shared.setPlayingInfo()
                 break
             default:
                 break
             }
         }
     }
-    
-    func setPlayingInfo(){
-        //设置后台播放时显示的东西，例如歌曲名字，图片等
-        
-        let currentIndex = UserDefaults.standard.getIndex()
-        guard let musics = MusicPlayManager.shared.musics,let title = musics[currentIndex].title,let artist = musics[currentIndex].artist,let album = musics[currentIndex].album, let artwork = musics[currentIndex].artwork else {
-            return
-        }
-        
-        let playingInfodict = [MPMediaItemPropertyTitle:title,
-                               MPMediaItemPropertyAlbumTitle:album,
-                               MPMediaItemPropertyArtist:artist,
-                               MPMediaItemPropertyPlaybackDuration:MusicPlayManager.shared.player.duration] as [String : Any]
-        
-        MPNowPlayingInfoCenter.default().nowPlayingInfo = playingInfodict
-        
-        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: artwork)
-      
-        
-       
-        
-        
-    }
+   
     
     // MARK: -  Set AnchorPoint
     func setAnchorPoint(_ anchorPoint:CGPoint, for view:UIView){

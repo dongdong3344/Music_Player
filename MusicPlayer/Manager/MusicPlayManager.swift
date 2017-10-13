@@ -74,6 +74,32 @@ class MusicPlayManager: NSObject,AVAudioPlayerDelegate {
         
     }
     
+ 
+    func setPlayingInfo(){
+        //设置后台播放时显示的东西，例如歌曲名字，图片等
+        
+        let currentIndex = UserDefaults.standard.getIndex()
+        
+        
+        print(currentIndex)
+        
+        print("-------------")
+        
+        guard let musics = musics,let title = musics[currentIndex].title,let artist = musics[currentIndex].artist,let album = musics[currentIndex].album, let artwork = musics[currentIndex].artwork else {
+            return
+        }
+        
+        let playingInfodict = [MPMediaItemPropertyTitle:title,
+                               MPMediaItemPropertyAlbumTitle:album,
+                               MPMediaItemPropertyArtist:artist,
+                               MPNowPlayingInfoPropertyElapsedPlaybackTime:player.currentTime,
+                               MPMediaItemPropertyPlaybackDuration:player.duration] as [String : Any]
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = playingInfodict
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: artwork)
+        
+    }
 
     func preparePlayer(){
         
@@ -110,6 +136,7 @@ class MusicPlayManager: NSObject,AVAudioPlayerDelegate {
         if currentIndex > (musics?.count)! - 1 {
             currentIndex = 0
         }
+        print(currentIndex)
         
         UserDefaults.standard.saveIndex(value: currentIndex)
         

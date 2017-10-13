@@ -20,8 +20,10 @@
                 <outlet property="containerView" destination="kLI-M9-EuY" id="r3E-ya-o4p"/>
                 <outlet property="currentTimeLabel" destination="0Gz-mf-bSa" id="xPE-h1-HRD"/>
                 <outlet property="loopButton" destination="bS1-ll-DNc" id="gFm-Gz-zps"/>
+                <outlet property="nextButton" destination="yeO-3y-Dn7" id="2js-Ld-T8B"/>
                 <outlet property="playDiskImageView" destination="3Ep-ck-JZG" id="yoq-y6-EIj"/>
                 <outlet property="playOrPauseButton" destination="Xv4-Ea-0TJ" id="qrd-qD-oEc"/>
+                <outlet property="previousButton" destination="KYq-0x-Ynr" id="oZg-SM-y7I"/>
                 <outlet property="timeSlider" destination="HbA-TR-JKt" id="AcP-FQ-ZdI"/>
                 <outlet property="titleLabel" destination="cJt-nb-GRm" id="f55-Hf-KtK"/>
                 <outlet property="totalTimeLabel" destination="vFR-9b-VPP" id="tsp-Hw-Zb2"/>
