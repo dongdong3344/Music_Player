@@ -72,6 +72,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         loopButtonClicked()
         
     }
+    
     @IBAction func playOrPauseClick(_ sender: UIButton) {
         
         sender.isSelected = !sender.isSelected
@@ -79,40 +80,26 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         setupDisplayLink()
         
         if !sender.isSelected {
+            rotateNeedleImageView()
             playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_play"), for: .normal)
             MusicPlayManager.shared.pause()
             stopTimer()
-            rotateNeedleImageView()
+           
             
         }else{
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_pause"), for: .normal)
+            
             recoverNeedleImageView()
-            MusicPlayManager.shared.play()
-            startTimer()
-        
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_pause"), for: .normal)
+                MusicPlayManager.shared.play()
+                self.startTimer()
+            })
+         
         }
-        
-   
+  
     }
     
-    // MARK: - Rotate or Recover Needle
-    func rotateNeedleImageView(){
-        
-        setAnchorPoint(CGPoint(x: 25 / 97.0, y:25 / 153.0), for: needleImgView)
-        UIView.animate(withDuration: 0.25) {
-            self.needleImgView.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi / 5))
-           
-        }
-    }
     
-    func recoverNeedleImageView(){
-        
-        setAnchorPoint(CGPoint(x:25 / 97.0, y:25 / 153.0), for: needleImgView)
-        UIView.animate(withDuration: 0.25) {
-             self.needleImgView.transform = .identity
-        }
-        
-    }
     
     @IBAction func audioListClick(_ sender: UIButton) {
         
@@ -133,18 +120,30 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
     }
     
+    // MARK: - Rotate or Recover Needle
+    func rotateNeedleImageView(){
+        
+        setAnchorPoint(CGPoint(x: 25 / 97.0, y:25 / 153.0), for: needleImgView)
+        UIView.animate(withDuration: 0.25) {
+            self.needleImgView.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi / 5))
+            
+        }
+    }
+    
+    func recoverNeedleImageView() {
+        
+        setAnchorPoint(CGPoint(x:25 / 97.0, y:25 / 153.0), for: needleImgView)
+        UIView.animate(withDuration: 0.25) {
+            self.needleImgView.transform = .identity
+        }
+       
+        
+    }
+    
     // MARK: - Previous and Next Play Animation
     func setupPreviousPlay(){
-       
-       MusicPlayManager.shared.playPrevious()
-        // 播放下一首或上一首时，图片回到初始位置
-       artworkImageView.transform = .identity
-        //当前按钮是暂停状态则修改为开始状态，再设置定时器状态
-        if !playOrPauseButton.isSelected {
-            playOrPauseButton.isSelected = true
-            recoverNeedleImageView()
-            setupDisplayLink()
-        }
+    
+        setupNeedleAndPlay()
         
         UIView.animate(withDuration: 0.25, animations: {_ in
             self.artworkImageView.center = CGPoint(x: self.artworkImageView.frame.size.width * 0.5 +  UIScreen.main.bounds.size.width, y: self.artworkImageView.center.y)
@@ -158,16 +157,8 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
     func setupNextPlay(){
         
-
-        MusicPlayManager.shared.playNext()
         
-        artworkImageView.transform = .identity
-        
-        if !playOrPauseButton.isSelected {
-             playOrPauseButton.isSelected = true
-             recoverNeedleImageView()
-             setupDisplayLink()
-        }
+       setupNeedleAndPlay()
         
         UIView.animate(withDuration: 0.25, animations: { _ in
             
@@ -181,6 +172,24 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
     }
     
+    
+    func setupNeedleAndPlay() {
+        
+        rotateNeedleImageView()
+        playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_play"), for: .normal)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.recoverNeedleImageView()
+            self.artworkImageView.transform = .identity
+            self.playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_pause"), for: .normal)
+            MusicPlayManager.shared.playNext()
+        }
+        if !playOrPauseButton.isSelected {
+            playOrPauseButton.isSelected = true
+            setupDisplayLink()
+        }
+    
+    }
     
     // MARK: - DisplayLink
     func setupDisplayLink(){
@@ -234,8 +243,6 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
     }
     
-    
-    
     override func viewDidDisappear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)
@@ -287,7 +294,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
             print("拔出耳机")
             MusicPlayManager.shared.pause()
             playOrPauseButton.isSelected = false
-            playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_vehicle_btn_play_prs"), for: .normal)
+            playOrPauseButton.setImage(#imageLiteral(resourceName: "cm2_fm_btn_play"), for: .normal)
             break
         default:
             break
@@ -305,7 +312,6 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
             MusicPlayManager.shared.pause()
        
         }
-        
         // 中断结束，判断是否需要恢复播放
         if interruptionOption == AVAudioSessionInterruptionOptions.shouldResume.rawValue{
             MusicPlayManager.shared.play()
