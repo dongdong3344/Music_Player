@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 enum MusicPlayMode: String {
     case ListLoop = "list_loop"
@@ -24,6 +25,7 @@ class MusicPlayManager: NSObject,AVAudioPlayerDelegate {
     
     /// 播放器
     var player : AVAudioPlayer!
+    
     /// 当前music index
     var currentIndex:Int = 0
     
@@ -72,6 +74,7 @@ class MusicPlayManager: NSObject,AVAudioPlayerDelegate {
         
     }
     
+
     func preparePlayer(){
         
 
@@ -110,7 +113,10 @@ class MusicPlayManager: NSObject,AVAudioPlayerDelegate {
         
         UserDefaults.standard.saveIndex(value: currentIndex)
         
-        play()
+        if playerIsPlaying {
+            play()
+        }
+        
     }
     
      public func playPrevious(){

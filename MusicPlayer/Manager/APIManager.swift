@@ -23,7 +23,6 @@ class APIManager: NSObject {
     
     //获取searchBarPlaceHolder text
     func getSearchPush(completion:@escaping(String) -> Void){
-        
         var searchPushs = [String]()
         let parameters:[String:Any] = ["plat":2,"version":8800,"channel":1009]
         let headers = ["Content-Type":"Application/json"]

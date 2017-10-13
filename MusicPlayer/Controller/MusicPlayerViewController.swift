@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
 class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
@@ -157,8 +158,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     
     func setupNextPlay(){
         
-        
-       setupNeedleAndPlay()
+        setupNeedleAndPlay()
         
         UIView.animate(withDuration: 0.25, animations: { _ in
             
@@ -232,6 +232,15 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //接受远程控制
+        UIApplication.shared.beginReceivingRemoteControlEvents()
+        
+        setPlayingInfo()
+    }
+    
     // 约束条件
     func setupConstrains(){
         
@@ -252,6 +261,66 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
         removeHideVolumeSliderTimer()
         
         NotificationManager.shared.removeObserver(self)
+        
+        //取消远程控制
+        UIApplication.shared.endReceivingRemoteControlEvents()
+    }
+    
+    
+    // MARK: -  Remote Control
+    override func remoteControlReceived(with event: UIEvent?) {
+        guard let event = event else { return }
+        if event.type == .remoteControl {
+            switch event.subtype {
+            case .remoteControlTogglePlayPause:
+                if !MusicPlayManager.shared.player.isPlaying {
+                    MusicPlayManager.shared.pause()
+                } else {
+                    MusicPlayManager.shared.play()
+                }
+            case .remoteControlPlay:
+                MusicPlayManager.shared.play()
+                break
+                
+            case .remoteControlPause:
+                MusicPlayManager.shared.pause()
+                break
+          
+            case .remoteControlNextTrack:
+                playNext(playOrPauseButton)
+                setPlayingInfo()
+                break
+            case .remoteControlPreviousTrack:
+                playPrevious(playOrPauseButton)
+                setPlayingInfo()
+                break
+            default:
+                break
+            }
+        }
+    }
+    
+    func setPlayingInfo(){
+        //设置后台播放时显示的东西，例如歌曲名字，图片等
+        
+        let currentIndex = UserDefaults.standard.getIndex()
+        guard let musics = MusicPlayManager.shared.musics,let title = musics[currentIndex].title,let artist = musics[currentIndex].artist,let album = musics[currentIndex].album, let artwork = musics[currentIndex].artwork else {
+            return
+        }
+        
+        let playingInfodict = [MPMediaItemPropertyTitle:title,
+                               MPMediaItemPropertyAlbumTitle:album,
+                               MPMediaItemPropertyArtist:artist,
+                               MPMediaItemPropertyPlaybackDuration:MusicPlayManager.shared.player.duration] as [String : Any]
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo = playingInfodict
+        
+        MPNowPlayingInfoCenter.default().nowPlayingInfo?[MPMediaItemPropertyArtwork] = MPMediaItemArtwork(image: artwork)
+      
+        
+       
+        
+        
     }
     
     // MARK: -  Set AnchorPoint
@@ -271,6 +340,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
     // MARK: - Add Notifications
     
     func addNotifications() {
+       
         
         NotificationManager.shared.addUpdatePlayerObserver(self, action: #selector(self.updateViews))
         
@@ -280,7 +350,7 @@ class MusicPlayerViewController: UIViewController,UIGestureRecognizerDelegate {
        
         
     }
-    
+    // MARK: - Handle RouteChange & Interrupt
     func handleRouteChange(_ notification:Notification){
         
         let routeChangeDict = notification.userInfo! as NSDictionary
